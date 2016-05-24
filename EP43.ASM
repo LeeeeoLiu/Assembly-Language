@@ -1,0 +1,42 @@
+DSEG 	SEGMENT
+DSEG 	ENDS
+CSEG 	SEGMENT
+		ASSUME 	CS:CSEG,DS:DSEG
+START:	MOV 	AX,DSEG
+		MOV 	DS,AX
+		MOV 	AH,01H	;输入字符
+		INT 	21H
+		MOV 	BL,30H
+		CMP 	AL,BL
+		JAE 	ABZ
+		JMP 	OTHER 		;小于30H，为其他字符
+ABZ:	MOV 	BL,39H		
+		CMP 	BL,AL
+		JAE 	NUM 		;30H和39H之间，为数字
+		MOV 	BL,41H
+		CMP 	AL,BL
+		JAE 	ABBA 	 	
+		JMP 	OTHER 		;大于39H却小于41H,为其他字符
+ABBA: 	MOV 	BL,5AH
+		CMP 	BL,AL
+		JAE 	LETTER  	;在a和z之间，为字母
+		MOV 	BL,61H
+		CMP 	AL,61H
+		JAE 	ABSA 		
+		JMP 	OTHER 		;大于z，小于A，为其他字符
+ABSA:	MOV 	BL,7AH
+		CMP  	BL,AL
+		JAE 	LETTER 		;在A和Z之间，为字母
+		JMP 	OTHER		;大于Z，为其他字符
+LETTER:	MOV		DL,'L'
+		JMP 	END1
+NUM:	MOV 	DL,'D'
+		JMP 	END1
+OTHER:	MOV 	DL,'O'
+		JMP 	END1
+END1:	MOV 	AH,02H
+		INT 	21H
+		MOV 	AH,4CH
+		INT 	21H
+CSEG 	ENDS 	
+		END 	START
