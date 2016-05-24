@@ -4,5 +4,5 @@
      
   
 ###环境：  
-DOSBOX 1.7（Mac）
-ljljl
+Mac OSX  
+DOSBOX 1.7
