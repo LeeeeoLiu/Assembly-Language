@@ -5,3 +5,4 @@
   
 ###环境：  
 DOSBOX 1.7（Mac）
+ljljl
