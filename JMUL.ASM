@@ -1,0 +1,6 @@
+		PUBLIC	JMUL
+JMUL 	PROC 	NEAR
+		
+
+		RET 
+JMUL 	ENDP
