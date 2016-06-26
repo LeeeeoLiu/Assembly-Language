@@ -1,0 +1,12 @@
+		PUBLIC	MIN
+MIN 	PROC 	NEAR
+		MOV 	BL,[DI]
+		INC 	DI
+		DEC 	CX
+GO:		CMP 	BL,[DI]
+		JL 		CONTI
+		MOV 	BL,[DI]
+CONTI:	INC 	DI
+		LOOP 	GO 		
+ 		RET
+MIN 	ENDP

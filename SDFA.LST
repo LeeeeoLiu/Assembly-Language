@@ -1,0 +1,37 @@
+Microsoft (R) Macro Assembler Version 5.00                  6/23/16 19:40:38
+                                                             Page     1-1
+
+
+
+EP75.EXE(5): warning A4085: End of file, no END directive
+Microsoft (R) Macro Assembler Version 5.00                  6/23/16 19:40:38
+                                                             Page     1-1
+
+
+				MZ 
+EP75.EXE(1): error A2106: Line too long
+				
+EP75.EXE(2): error A2106: Line too long
+				
+				
+				 
+EP75.EXE(5): warning A4085: End of file, no END directive
+Microsoft (R) Macro Assembler Version 5.00                  6/23/16 19:40:38
+                                                             Symbols-1
+
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+@FILENAME  . . . . . . . . . . .  	TEXT  EP75		
+
+
+      4 Source  Lines
+      5 Total   Lines
+      1 Symbols
+
+  51338 + 465206 Bytes symbol space free
+
+      1 Warning Errors
+      3 Severe  Errors

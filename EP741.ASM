@@ -1,0 +1,12 @@
+		PUBLIC	MAX
+MAX  	PROC 	NEAR
+		MOV 	BL,[DI]
+		INC 	DI
+		DEC 	CX
+GO0:	CMP 	BL,[DI]
+		JG 		CONTI0
+		MOV 	BL,[DI]
+CONTI0:	INC 	DI
+		LOOP 	GO0 		
+ 		RET
+MAX  	ENDP

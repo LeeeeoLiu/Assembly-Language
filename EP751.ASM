@@ -1,0 +1,29 @@
+		PUBLIC	SECRT
+SECRT  	PROC 	NEAR
+		INC 	SP
+		INC 	SP
+		POP 	BX
+		POP 	SI
+		POP 	DI
+		PUSH 	SI
+		MOV 	DL,CL
+		MOV 	CL,CH
+		XOR 	CH,CH
+		XOR 	DH,DH
+		ADD 	DX,SI
+GO:		MOV 	AH,[DI]
+		MOV 	AL,[SI]
+		XOR 	AH,AL
+		MOV 	[BX],AH
+		INC 	BX
+		INC 	DI
+		INC 	SI
+		CMP 	SI,DX
+		JE 		RESET
+		JMP 	GOON
+RESET:	POP 	SI
+		PUSH 	SI		
+GOON:	LOOP 	GO	
+		SUB 	SP,6
+ 		RET
+SECRT  	ENDP
