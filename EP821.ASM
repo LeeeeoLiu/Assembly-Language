@@ -1,0 +1,31 @@
+		PUBLIC 	DTB
+DTB 	PROC 	NEAR
+		PUSH 	BX
+		XOR 	CX,CX
+		PUSH 	SI
+		INC 	SI
+DTB0:	MOV 	AL,[SI]
+		CMP 	AL,'0'
+		JB 		RETURN
+		CMP 	AL,'9'
+		JA 		RETURN
+		SUB 	AL,'0'
+		XOR 	AH,AH
+		MOV 	BX,CX
+		SHL 	CX,1
+		SHL 	CX,1
+		ADD 	CX,BX
+		SHL 	CX,1
+		ADD 	CX,AX
+		INC 	SI
+		JMP 	DTB0
+RETURN:	POP 	SI
+		MOV 	AL,[SI]
+		CMP 	AL,'+'
+		JE	 	OVER
+ 		NOT 	CX
+		OR 		CX,80H
+		INC 	CX
+OVER:	POP 	BX	
+		RET 
+DTB		ENDP

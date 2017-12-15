@@ -1,0 +1,20 @@
+		PUBLIC 	MADD
+MADD 	PROC 	NEAR
+		PUSH 	SI
+		PUSH 	DI
+		PUSH 	CX
+		CLC 	
+		MOV 	CL,LEN
+		ADD 	CL,CL
+MADD1:	MOV 	AL,[SI]
+		ADC 	AL,[DI]
+		MOV 	[DI],AL
+		INC 	SI
+		INC 	DI
+		DEC 	CL
+		JNZ 	MADD1
+		POP 	CX
+		POP 	DI
+		POP 	SI	
+		RET
+MADD 	ENDP

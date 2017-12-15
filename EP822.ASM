@@ -1,0 +1,28 @@
+		PUBLIC 	OVERF
+OVERF	PROC 	NEAR
+		MOV 	DL,'o'
+		MOV 	AH,02H
+		INT 	21H
+		MOV 	DL,'v'
+		MOV 	AH,02H
+		INT 	21H
+		MOV 	DL,'e'
+		MOV 	AH,02H
+		INT 	21H
+		MOV 	DL,'r'
+		MOV 	AH,02H
+		INT 	21H
+		MOV 	DL,'f'
+		MOV 	AH,02H
+		INT 	21H
+		MOV 	DL,'l'
+		MOV 	AH,02H
+		INT 	21H
+		MOV 	DL,'o'
+		MOV 	AH,02H
+		INT 	21H
+		MOV 	DL,'w'
+		MOV 	AH,02H
+		INT 	21H
+		RET
+OVERF	ENDP
